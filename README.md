@@ -2,6 +2,7 @@
 
 A ready-to-use **Visual Studio Code Dev Container** for creating and previewing [PlantUML](https://plantuml.com/) diagrams using the [jebbs.plantuml](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) extension and a local PlantUML server.
 
+![Example Sequence Diagram](docs/django-app-auth-flow.png)
 ---
 
 ## Features
@@ -62,6 +63,8 @@ This will:
     1. Press Alt + D (Windows/Linux) or Option + D (macOS)
     1. Or use Command Palette → “PlantUML: Preview Current Diagram”
 4.	The rendered diagram will be shown in a preview panel or exported to diagrams/out/.
+
+## 
 
 ## License
 
