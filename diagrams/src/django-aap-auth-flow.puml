@@ -1,0 +1,24 @@
+/'
+Source https://real-world-plantuml.com/umls/4657521860018176 
+'/
+@startuml Django App Auth Flow
+autonumber
+actor Alice
+Alice -> Webapp : click on external auth
+== Initialisation ==
+Webapp -> DjangoAPI : Authentication Request (TOKEN)
+...
+== Stock browser / new window ==
+ref over Webapp, DjangoUI: Browser opened with <b>UIurl?asktkn=TOKEN</b>
+Webapp -> DjangoUI : Browser window
+DjangoUI -> ExtProvider : Auth request
+Alice -> ExtProvider : Enter credentials
+ExtProvider -> DjangoUI : Auth response
+DjangoUI -> DjangoAPI : Auth response
+== API Return ==
+...
+Alice -> Webapp : Click on auth. done
+note right: or continuous polling
+Webapp -> DjangoAPI : Ask for token
+DjangoAPI -> Webapp : Retrieve Token
+@enduml
