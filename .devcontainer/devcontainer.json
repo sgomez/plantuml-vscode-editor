@@ -16,8 +16,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "docker run -d -p 9099:8080 plantuml/plantuml-server:jetty",
+	"postStartCommand": "sh -lc 'docker ps -a --format \"{{.Names}}\" | grep -qx plantuml || docker run --rm -d --name plantuml --restart unless-stopped -p 9099:8080 plantuml/plantuml-server:jetty; docker start plantuml >/dev/null 2>&1 || true'",
 	"customizations": {
 		"vscode": {
 			"extensions": [
